@@ -12,7 +12,8 @@ class Flaps
 		tab.addEventListener('click', @eventListener.bind(@)) for tab in @tabheaders
 
 	eventListener: (e) ->
-		item = e.toElement.dataset.itemPosition
+		target = e.target || window.event.srcElement;
+		item = target.dataset.itemPosition
 
 		if item != @current
 			current = document.querySelector('.flap:nth-of-type('+@current+')')
