@@ -449,7 +449,7 @@ function GetMonDays()//Get number of days in a month
 }
 Calendar.prototype.GetMonDays=GetMonDays;
 
-function IsLeapYear()
+Calendar.prototype.IsLeapYear = function()
 {
 	if ((this.Year%4)==0)
 	{
@@ -467,9 +467,8 @@ function IsLeapYear()
 		return false;
 	}
 }
-Calendar.prototype.IsLeapYear=IsLeapYear;
 
-function FormatDate(pDate)
+Calendar.prototype.FormatDate = function(pDate)
 {
 	if (this.Format.toUpperCase()=="DDMMYYYY")
 		return (pDate+DateSeparator+(this.Month+1)+DateSeparator+this.Year);
@@ -479,5 +478,4 @@ function FormatDate(pDate)
 		return ((this.Month+1)+DateSeparator+pDate+DateSeparator+this.Year);
 	else if (this.Format.toUpperCase()=="MMMDDYYYY")
 		return (this.GetMonthName(false)+DateSeparator+pDate+DateSeparator+this.Year);			
-}
-Calendar.prototype.FormatDate=FormatDate;	
+}	
