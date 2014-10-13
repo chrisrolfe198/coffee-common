@@ -7,6 +7,7 @@ class Ajax
 			return false
 
 		@xhr.open(type, location, true)
+		@xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
 		@xhr.onreadystatechange = ->
 			if @readyState is 4
 				if @status is 200
