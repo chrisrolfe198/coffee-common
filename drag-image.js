@@ -47,9 +47,10 @@ DragImage.prototype.init = function() {
 		});
 	});
 	var config = { attributes: true, childList: true, characterData: true };
-	observer.observe(document.querySelector('.rich-textarea'), config);
-
-
+	var rich = document.querySelector('.rich-textarea');
+	if (rich) {
+		observer.observe(document.querySelector('.rich-textarea'), config);
+	}
 };
 
 new DragImage();
